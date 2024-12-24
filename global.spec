@@ -100,8 +100,7 @@ chmod -x %{buildroot}/%{_sysconfdir}/gtags.conf
 
 %preun
 if [ $1 -eq 0 ]; then
-  /sbin/install-info --delete %{_infodir}/%{name}.info \
-    %{_infodir}/dir 2>/dev/null || :
+  /sbin/install-info --delete %{_infodir}/%{name}.info %{_infodir}/dir 2>/dev/null || :
 fi
 
 %files
